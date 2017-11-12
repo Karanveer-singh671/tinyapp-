@@ -7,7 +7,7 @@ TIny App is a full stack web application built with Node and Express that allows
 !["screenshot 3: new URL"] (https://github.com/Karanveer-singh671/tinyapp-/blob/master/doc/New%20URL.png)
 !["screenshot 4: added URLS"] (https://github.com/Karanveer-singh671/tinyapp-/blob/master/doc/added%20urls%20for%20user.png)
 
-#Dependencies
+# Dependencies
 
   Node.js
   Express
@@ -16,7 +16,7 @@ TIny App is a full stack web application built with Node and Express that allows
   body-parser
   cookie-session
 
-#Getting Started
+# Getting Started
 
 Install all dependencies (using the npm install command).
 Run the development web server using the node express_server.js command.
