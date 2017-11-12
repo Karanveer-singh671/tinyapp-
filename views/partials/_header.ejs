@@ -1,0 +1,20 @@
+
+<header></header>
+<% if (user) { %>
+  <p>Logged in as <%= user.id%></p>
+    <form action = "/logout" method="POST">
+    <input type = "submit" value="Logout">
+
+    </form>
+<% } else { %>
+  <body>
+    <div id="button"><a href="/login">Log In</a></div>
+      <div id="button"><a href="/register">Register</a></div> <!-- spwecify route not ejs files-->
+
+  <!-- <form action = "/login" method="POST">
+    <input name = "username" style="width: 300px">
+    <input name="password" style="width: 300px"
+     <input type="submit" value="Login">
+  </form> -->
+  </body>
+<% } %>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>TinyApp</title>
+</head>
+<body>
+<header><% include ../views/partials/_header %>
+</header>
+    <% for(let key in urls) { %>
+
+    <li><%= key + ': ' + urls[key].longURL %></li>
+
+    <form method="POST" action="/urls/<%=key%>/delete">><button>Delete</button></form>
+  <form method = "GET" action="/urls/<%=key%>"><button>edit</button></form>
+    <a href="url">Click here!</a>
+      <%} %>
+</body>
+
+
+
+
+
+</html>

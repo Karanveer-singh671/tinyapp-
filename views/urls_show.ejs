@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<form method = "POST" action= "/urls/<%=shortURL%>">
+  shortURL: <%= shortURL %><br>
+  <input type="text" name= "longURL" value="<%= urls[shortURL].longURL%>">
+  <br>
+  <input type="submit" value="Update">
+</form>
+
+
+</body>
+
+</html>
