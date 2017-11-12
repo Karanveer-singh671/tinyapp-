@@ -3,7 +3,7 @@ var app = express();
 const bcrypt = require('bcrypt');
 var PORT = process.env.PORT || 8080; // default port 8080
 const bodyParser = require("body-parser");
-var cookieSession = require('cookie-session')
+var cookieSession = require('cookie-session');
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
@@ -13,7 +13,7 @@ app.use(cookieSession({
 
   // Cookie Options
   maxAge: 24 * 60 * 60 * 1000 // 24 hours
-}))
+}));
 
 // THE ABOVE SECTION IS THE STUFF OF REQUIRING THE NPMS ETC.
 
@@ -23,18 +23,18 @@ const users = {
   "userRandomID": {
     id: "userRandomID",
     email: "user@example.com",
-    password: bcrypt.hashSync('password', 10),
+    password: bcrypt.hashSync('password', 10)
 
   },
   "user2RandomID": {
     id: "user2RandomID",
     email: "user2@example.com",
-    password: bcrypt.hashSync('password', 10),
+    password: bcrypt.hashSync('password', 10)
   },
   "user3RandomID": {
     id: "user3RandomID",
     email: "me@me.com",
-    password: bcrypt.hashSync('password', 10),
+    password: bcrypt.hashSync('password', 10)
   }
 
 };
@@ -105,7 +105,7 @@ app.get("/", (req, res) => {
 
 app.get("/urls", (req, res) => {
 
-  let user= users[req.session.user_id];
+  let user = users[req.session.user_id];
 
   if (!user) {
     return res.redirect("/login");
@@ -115,7 +115,7 @@ app.get("/urls", (req, res) => {
   let templateVars = {
     user: user,
     urls: urlsForUser(user.id),
-    email: findUserByEmail(user.email),
+    email: findUserByEmail(user.email)
   };
   res.render("urls_index", templateVars);
 
@@ -126,7 +126,7 @@ app.post("/urls", (req, res) => {
   let longURL = req.body["longURL"];
   urlDatabase[shortURL] = {
     longURL: longURL,
-    userID: req.session.user_id,
+    userID: req.session.user_id
   };
   res.redirect("/urls/");
 });
@@ -134,7 +134,7 @@ app.post("/urls", (req, res) => {
 app.get("/urls/new", (req, res) => {
   let user = users[req.session["user_id"]];
   let templateVars = { user: user,
-    urls: urlDatabase,
+    urls: urlDatabase
   };
 
   if(user) {
@@ -226,10 +226,10 @@ app.post("/register", (req, res) => {
     res.send("Email already exists");
   } else{
 
-      users[user_id] = {
+    users[user_id] = {
       id: user_id,
       email: req.body.email,
-      password: bcrypt.hashSync(password, 10),
+      password: bcrypt.hashSync(password, 10)
     };
     req.session.user_id = user_id;
 
