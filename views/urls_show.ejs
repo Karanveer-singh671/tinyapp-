@@ -4,6 +4,7 @@
 
 <form method = "POST" action= "/urls/<%=shortURL%>">
   shortURL: <%= shortURL %><br>
+  longURL: <%urls[shortURL].longURL%>
   <input type="text" name= "longURL" value="<%= urls.user_id%>">
   <br>
   <input type="submit" value="Update">
